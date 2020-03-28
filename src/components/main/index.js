@@ -3,15 +3,22 @@ import logic from '../../logic'
 
 function App1 () {
 
-    const [count, setCount] = useState(0);
+    const [visible, setVisible] = useState(false);
+
     useEffect(() => {
       logic.getPeople('r')
         .then(result => {
           console.log('THATS THE RESULT MY FRIEDN')
-          console.log(result)})
+          console.log(result)
+          setVisible(true)
+          })
       
     }, []);
 
+    
+
+    if(!visible) return <div><p>Loading Data from API....</p></div>; 
+    
     return (
         <div >
           <h1>Hooked CryptoChecker</h1>

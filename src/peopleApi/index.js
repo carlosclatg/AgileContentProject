@@ -8,7 +8,7 @@ const SWApi = {
         if(nextPage == 0) {
             arrayPeople = new Array();
         }
-        if(nextPage == 0) urlFetch = `${this.url}people/?search=r`;
+        if(nextPage == 0) urlFetch = `${this.url}people/?search=r12121`;
         else urlFetch = nextPage;
         console.log('before detching')
         return fetch(urlFetch, {
