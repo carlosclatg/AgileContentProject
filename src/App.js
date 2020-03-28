@@ -1,8 +1,13 @@
-import React from 'react';
+'use strict'
+
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import App1 from './components/main'
 
 function App() {
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +23,7 @@ function App() {
         >
           Learn React
         </a>
+        <App1></App1>
       </header>
     </div>
   );
