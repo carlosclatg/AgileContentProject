@@ -8,9 +8,8 @@ const SWApi = {
         if(nextPage == 0) {
             arrayPeople = new Array();
         }
-        if(nextPage == 0) urlFetch = `${this.url}people/?search=r12121`;
+        if(nextPage == 0) urlFetch = `${this.url}people/?search=r`;
         else urlFetch = nextPage;
-        console.log('before detching')
         return fetch(urlFetch, {
             method: 'GET',
             headers: {
@@ -24,8 +23,6 @@ const SWApi = {
             response.json()
                 .then(data => { 
                     arrayPeople = arrayPeople.concat(data.results);
-                    console.log(arrayPeople)
-                    console.log(data.next)
                     if(data.next) {
                         this.getPeople(null, arrayPeople, data.next, resolve, reject)
                     } else {
