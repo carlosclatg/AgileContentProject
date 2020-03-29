@@ -1,20 +1,19 @@
 'use strict'
-
-import React, { useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import App1 from './components/Main'
+import React, { useState, useEffect } from 'react';
+import { Route, HashRouter as Router, Redirect, withRouter, Switch  } from "react-router-dom";
+import Home from './components/Home'
 
 function App() {
 
 
+
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
-      <App1></App1>
-    </div>
+      <Router>
+          <Route exact path="/" render={() => <Redirect to="/home" /> }/>
+          <Route path="/home" component={ Home }/>
+      </Router>
+    </div> 
   );
 }
-
-export default App;
+export default withRouter(App);

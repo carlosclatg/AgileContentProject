@@ -8,7 +8,7 @@ const SWApi = {
         if(nextPage == 0) {
             arrayPeople = new Array();
         }
-        if(nextPage == 0) urlFetch = `${this.url}people/?search=r`;
+        if(nextPage == 0) urlFetch = `${this.url}people/?search=${searchCriteria}`;
         else urlFetch = nextPage;
         return fetch(urlFetch, {
             method: 'GET',
@@ -18,21 +18,20 @@ const SWApi = {
         })
         .then(response => {
             if (response.status !== 200)  {
-                throw `${response.status}: ${response.statusText}`;
+                reject(response.status)
             }
             response.json()
                 .then(data => { 
                     arrayPeople = arrayPeople.concat(data.results);
+                    console.log(arrayPeople)
                     if(data.next) {
                         this.getPeople(null, arrayPeople, data.next, resolve, reject)
                     } else {
                         return resolve(arrayPeople)
                     }
-              }).catch(err => console.log(err));
-        })
+              }).catch();
+        }).catch()
     } 
 }
 
 export default SWApi
-
-
