@@ -1,12 +1,9 @@
-'use strict'
-import React, { useState, useEffect } from 'react';
-import { Route, HashRouter as Router, Redirect, withRouter, Switch  } from "react-router-dom";
-import Home from './components/Home'
+import React from 'react';
+import { HashRouter as Router, Redirect, Route, withRouter } from "react-router-dom";
+import Home from './components/Home';
+import './App.css'
 
 function App() {
-
-
-
   return (
     <div className="App">
       <Router>
