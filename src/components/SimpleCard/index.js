@@ -1,16 +1,18 @@
 import React, { useState, useEffect, Fragment } from 'react';
 
-export default function simpleCard({per}){
+function SimpleCard({person}){
 
     return (
         <Fragment>
             <div className="bookCard" >
                 <div className="bookCard__image">
-                    {/* <img src={"http://facetheforce.today/luke"}></img> */}
-                    <p>{per.name}</p>
-                    <p>{per.height}</p>
+                    <img src="http://facetheforce.today/luke" height="42" width="42"/>
+                    <p>{person.name}</p>
                 </div>
             </div>
-        </Fragment>)
+        </Fragment>
+    )
 
 }
+
+export default SimpleCard;

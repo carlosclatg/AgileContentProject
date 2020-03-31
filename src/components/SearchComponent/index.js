@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 import logic from '../../logic'
 import './index.css'
 
-export default function SearchComponent({ setDataToDisplay}){
+export default function SearchComponent({setDataToDisplay}){
 
     const [criteria, setCriteria] = useState();
     const [loading, setLoading] = useState();
@@ -23,7 +23,6 @@ export default function SearchComponent({ setDataToDisplay}){
 
         }
     }
-
 
     const handleCriteria = event => {
         setCriteria(event.target.value)

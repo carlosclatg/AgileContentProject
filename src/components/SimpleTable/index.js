@@ -2,14 +2,15 @@ import React, { useState, useEffect, Fragment } from 'react';
 import ScrollableContainer from '../ScrollableContainer';
 import './index.sass'
 
-export default function SimpleTable({people, handleShowPerson, handleSavePerson}){
+export default function SimpleTable({people, saveToFavorites, showDetails}){
 
-    const handleShow = (event) =>{
-        console.log(event.target.value)
+    const handleSaveToFav = (event) =>{
+        saveToFavorites(event.target.value)
     }
-    const handleSave = (event) =>{
-        console.log(event.target.value)
+    const handleShowDetails = (event) =>{
+        showDetails(event.target.value)
     }
+
 
     return (
         <ScrollableContainer>
@@ -33,8 +34,8 @@ export default function SimpleTable({people, handleShowPerson, handleSavePerson}
                             <td>{person.eye_color}</td>
                             <td>
                                 <div>
-                                    <button value={person.name} onClick={handleShow}>show details</button>
-                                    <button value={person.name} onClick={handleSave}>save</button>
+                                    <button value={person.name} onClick={handleShowDetails}>show details</button>
+                                    <button value={person.name} onClick={handleSaveToFav}>save</button>
                                 </div>
                             </td>
                         </tr>)

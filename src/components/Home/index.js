@@ -4,15 +4,46 @@ import SearchComponent from '../SearchComponent'
 import logic from '../../logic'
 import SimpleTable from '../SimpleTable';
 import { ThemeProvider } from "styled-components"
+import FavoritesPanel from '../FavoritesPanel'
 import Container from '../Container';
 import './index.css'
+import utils from '../../utils'
+
 
 function Home(){
 
-  const [data, setData] = useState([]);
+  let data = []
+  const [dataSimplified, setDataSimplified] = useState([])
+  const [favorites, setFavorites] = useState([]);
+  const [characterToDisplay, setcharacterToDisplay] = useState([]);
 
   const displayResults = (dataRetrieved) => {
-      setData(dataRetrieved)
+      if(dataRetrieved.length){
+          data = dataRetrieved
+          let arraySimplified = utils.retrieveFavoritesFromData(favorites, dataRetrieved)
+          setDataSimplified(arraySimplified)
+      } else {
+          data = []
+      }
+  }
+
+
+  useEffect(()=>{
+    if(favorites.length){
+        setDataSimplified(dataSimplified.filter(item => item.name !== favorites[favorites.length - 1]))
+    }
+  }, [favorites])
+
+  const saveToFavorites = (nameToAdd) => { 
+    let newArrOfFavs = [...favorites];
+    const elemToAdd = dataSimplified.find(elem => elem.name == nameToAdd)
+    newArrOfFavs.push(elemToAdd)
+    setFavorites(newArrOfFavs)
+    setDataSimplified(dataSimplified.filter(item => item.name !== elemToAdd.name))
+  }
+
+  const showDetails = (nameToShow) => {
+      console.log(nameToShow)
   }
 
   
@@ -22,14 +53,24 @@ function Home(){
   }
 
     return (
-        <div className="searchContainer">
-            <ThemeProvider theme={theme}>
-                <Container simple>
-                    <SearchComponent setDataToDisplay={displayResults} />
-                </Container>
-                <SimpleTable people = {data} />
-            </ThemeProvider>
-        </div>)
+        <Fragment>
+            <div className="searchContainer">
+                <ThemeProvider theme={theme}>
+
+                    <Container simple>
+                        <SearchComponent setDataToDisplay={displayResults} />
+                    </Container>
+                    <SimpleTable people = {dataSimplified} saveToFavorites = {saveToFavorites} showDetails = {showDetails}/>
+                </ThemeProvider>
+            </div>
+            <div className="favoritesContainer">
+                <FavoritesPanel favorites={favorites}/>
+            </div>
+        </Fragment>
+        
+        
+        
+        )
 
 }
 
