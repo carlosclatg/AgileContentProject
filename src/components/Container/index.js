@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export default styled.div`
-    height: ${props => props.simple ? "33%" : "66%"};
+    height: ${props => props.simple ? "30%" : "63%"};
     width: 100%;
     background-color: #d5e0f0;
     display: flex;
@@ -9,7 +9,8 @@ export default styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
-    padding: 1%
+    padding: 1%;
+    margin: 1%;
 
 `;
 

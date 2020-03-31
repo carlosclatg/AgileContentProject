@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import utils from '../../utils';
+import Button from '../Button';
 
 function SimpleCard({person, remove, show}){
 
@@ -15,14 +16,14 @@ function SimpleCard({person, remove, show}){
     
 
     return (
-        <Fragment>
             <div className="personCard" >
                 <img className="personCard__image" src={getRandomImage(person.url)} width= "175px" height="175px"/>
                 <p>{person.name}</p>
-                <button value={person.name} onClick={handleRemove}>Remove</button>
-                <button value={person.name} onClick={handleShow}>ShowDetails</button>
+                <div className="personCard__buttonDiv">
+                    <Button value={person.name} onClick={handleRemove}>Remove</Button>
+                    <Button value={person.name} onClick={handleShow}>Show Details</Button>
+                </div>
             </div>
-        </Fragment>
     )
 
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import ScrollableContainer from '../ScrollableContainer';
+import Button from '../Button'
 import './index.sass'
 
 export default function SimpleTable({people, saveToFavorites, showDetails}){
@@ -34,8 +35,8 @@ export default function SimpleTable({people, saveToFavorites, showDetails}){
                             <td>{person.eye_color}</td>
                             <td>
                                 <div>
-                                    <button value={person.name} onClick={handleShowDetails}>show details</button>
-                                    <button value={person.name} onClick={handleSaveToFav}>save</button>
+                                    <Button value={person.name} onClick={handleShowDetails}>show details</Button>
+                                    <Button value={person.name} onClick={handleSaveToFav}>save</Button>
                                 </div>
                             </td>
                         </tr>)

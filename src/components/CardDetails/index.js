@@ -21,7 +21,7 @@ function CardDetails({person, remove}){
                     <p>{person.eye_color}</p>
                     <p>{person.birth_year}</p>
                     <p>{person.gender}</p>
-                    <button onClick={removeFav}>OK</button>
+                    <button className="button is-info" onClick={removeFav}>OK</button>
                 </div>
             </div>
         </Fragment>
