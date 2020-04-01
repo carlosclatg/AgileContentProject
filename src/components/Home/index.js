@@ -81,14 +81,16 @@ function Home(){
                     <SearchComponent setDataToDisplay={displayResults} resetValues = {resetValues}/>
                     <SimpleTable people = {dataSimplified} saveToFavorites = {saveToFavorites} showDetails = {showDetails}/>
                 </Container>
-                <Container simple>
-                    <div className="favoritesContainer">
-                        <FavoritesPanel favorites={favorites} removeFromFavorites = {removeFromFavorites} showDetails = {showDetails}/>
-                    </div>
+                <Container simple >
+                  <p>Saved People</p>
+                  <div className="favoritesContainer">
+                    <FavoritesPanel favorites={favorites} removeFromFavorites = {removeFromFavorites} showDetails = {showDetails}/>
+                  </div>
                 </Container>
             </div>
-            <div className= "secondColumn">
+            <div className="secondColumn">
                 <Container simple>
+                    
                     { characterToDisplay ?
                         <CardDetails person={characterToDisplay} remove={remove}/>
                         :

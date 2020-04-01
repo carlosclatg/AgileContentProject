@@ -1,18 +1,47 @@
 import styled from "styled-components"
 
+
+const handleColorType = color => {
+  switch (color) {
+    case "primary":
+      return "#3298dc";
+    case "danger":
+      return "#c92ab7";
+    default:
+      return "#3298dc";
+  }
+};
+
+const handleColorTypeHover = color => {
+    switch (color) {
+      case "primary":
+        return "#3298ff";
+      case "danger":
+        return "#c92aaa";
+      default:
+        return "#3298ff";
+    }
+  };
+
+
 export default styled.button`
-    background-color: #3298dc;
     border-color: transparent;
     border-radius:0.25em;
-    color: #fff;
+    color:#fff;
+    margin: 2px;
+    background-color: ${({ color }) => handleColorType(color)};
     border-width: 1px;
     cursor: pointer;
     justify-content: center;
-    padding: 5%;
+    padding: 2%;
     text-align: center;
     white-space: nowrap;
     &:hover{
-        background-color:#0f7cab;
+        background-color: ${({ color }) => handleColorTypeHover(color)};
     }
+    /* width: ${props => (props.fit ? "calc(50%);" : null)}; */
+    ;
 
 `;
+
+
