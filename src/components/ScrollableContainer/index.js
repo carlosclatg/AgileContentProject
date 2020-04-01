@@ -5,6 +5,8 @@ const ScrollableContainer = styled(Container)`
     overflow-y: scroll;
     max-height: 450px;
     max-width: 100%;
+    max-height: 75%;
+    height: 70%;
     overflow: auto;
     display: flex;
     flex-direction: column;

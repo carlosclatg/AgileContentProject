@@ -7,15 +7,18 @@ import FavoritesPanel from '../FavoritesPanel';
 import SearchComponent from '../SearchComponent';
 import SimpleTable from '../SimpleTable';
 import CardDetails from '../CardDetails'
+import Button from '../Button'
 import './index.sass';
 
 
 function Home(){
 
   let data = []
+  const sex = [null, 'male', 'female']
   const [dataSimplified, setDataSimplified] = useState([])
   const [favorites, setFavorites] = useState([]);
-  const [characterToDisplay, setcharacterToDisplay] = useState();
+  const [characterToDisplay, setcharacterToDisplay] = useState(null);
+  const [genderFilter, setGenderFilter] = useState(sex[0]);
 
   const displayResults = (dataRetrieved) => {
       if(dataRetrieved.length){
@@ -29,7 +32,6 @@ function Home(){
 
 
   useEffect(()=>{
-    console.log("inside useEffect of favorites")
     if(favorites.length){
         setDataSimplified(dataSimplified.filter(item => item.name !== favorites[favorites.length - 1]))
     }
@@ -67,6 +69,13 @@ function Home(){
     setcharacterToDisplay(null)
   }
 
+  const filterSelection = (event) => { 
+    console.log(event.target.value)
+    setGenderFilter(event.target.value)
+
+    console.log(favorites.filter(f => !genderFilter ? true : f.gender == genderFilter))
+  }
+
   
 
   const theme = {
@@ -77,27 +86,38 @@ function Home(){
         <Fragment>
             <ThemeProvider theme={theme}>
             <div className="firstColumn">
-                <Container >
+                <Container height="57">
                     <SearchComponent setDataToDisplay={displayResults} resetValues = {resetValues}/>
                     <SimpleTable people = {dataSimplified} saveToFavorites = {saveToFavorites} showDetails = {showDetails}/>
                 </Container>
-                <Container simple >
-                  <p>Saved People</p>
+                <Container height="40" >
+                  <div> 
+                    <p className="savedPeople">Saved People</p>
+                    <div id="myBtnContainer">
+                        <Button onClick={filterSelection}>All</Button>
+                        <Button value ="male" onClick={filterSelection}>Male</Button>
+                        <Button value ="female" onClick={filterSelection}>Female</Button>
+                    </div>
+                  </div>
                   <div className="favoritesContainer">
-                    <FavoritesPanel favorites={favorites} removeFromFavorites = {removeFromFavorites} showDetails = {showDetails}/>
+                    <FavoritesPanel favorites={favorites.filter(f => !genderFilter ? true : f.gender == genderFilter)} removeFromFavorites = {removeFromFavorites} showDetails = {showDetails}/>
                   </div>
                 </Container>
             </div>
-            <div className="secondColumn">
-                <Container simple>
-                    
-                    { characterToDisplay ?
-                        <CardDetails person={characterToDisplay} remove={remove}/>
-                        :
-                        <p>Nothing to display</p>
-                    }
-                </Container>
-            </div>
+            {
+              characterToDisplay ?
+                <div className="secondColumn">
+                    <Container height="99">
+                      <CardDetails person={characterToDisplay} remove={remove}/>
+                    </Container>
+                </div>
+                :
+                <div className="secondColumn secondColumn__empty">
+                    <Container height="99">
+                      <p>Nothing to display</p>
+                    </Container>
+                </div>
+              }
             </ThemeProvider>
         </Fragment>
         )

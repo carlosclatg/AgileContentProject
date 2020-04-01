@@ -14,6 +14,7 @@ function SimpleCard({person, remove, show}){
     const handleShow = (event) => {
         show(event.target.value)
     }
+
     
 
     return (

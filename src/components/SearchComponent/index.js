@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import logic from '../../logic'
-import './index.css'
+import './index.sass'
 
 export default function SearchComponent({setDataToDisplay, resetValues}){
 
@@ -31,7 +31,7 @@ export default function SearchComponent({setDataToDisplay, resetValues}){
     return (
         <div className="searchContainer">
             <div className="searchTitle">
-                <h4>Search People</h4>
+                <p>Search People</p>
             </div>
             <form className="field has-addons" onSubmit={handleFormSubmit}>
                 <div className="">

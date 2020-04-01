@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import utils from '../../utils'
+import './index.sass'
 
 function CardDetails({person, remove}){
 
@@ -9,22 +10,23 @@ function CardDetails({person, remove}){
     
 
     return (
-        <Fragment>
+
             <div className="bookCard" >
-                <div className="bookCard__image">
-                    <img src={getRandomImage(person.url)} height="42" width="42"/>
-                    <p>{person.name}</p>
-                    <p>{person.height}</p>
-                    <p>{person.mass}</p>
-                    <p>{person.hair_color}</p>
-                    <p>{person.skin_colorass}</p>
-                    <p>{person.eye_color}</p>
-                    <p>{person.birth_year}</p>
-                    <p>{person.gender}</p>
+                <div className="bookCard__content">
+                    <div className="bookCard__title"><p>Information about...</p></div>
+                    <img src={getRandomImage(person.url)}  />
+                    <div className="bookCard__feature bookCard__feature-big"><p className="bookCard__featureName bookCard__featureName-big"></p><p>{person.name}</p></div>
+                    <div className="bookCard__feature"><p className="bookCard__featureName">height :</p><p>{person.height}</p></div>
+                    <div className="bookCard__feature"><p className="bookCard__featureName">mass: </p><p>{person.mass}</p></div>
+                    <div className="bookCard__feature"><p className="bookCard__featureName">hair_color: </p><p>{person.hair_color}</p></div>
+                    <div className="bookCard__feature"><p className="bookCard__featureName">skin_colorass: </p><p>{person.skin_colorass}</p></div>
+                    <div className="bookCard__feature"><p className="bookCard__featureName">eye_color: </p><p>{person.eye_color}</p></div>
+                    <div className="bookCard__feature"><p className="bookCard__featureName">birth_year: </p><p>{person.birth_year}</p></div>
+                    <div className="bookCard__feature"><p className="bookCard__featureName">gender: </p><p>{person.gender}</p></div>
                     <button className="button is-info" onClick={removeFav}>OK</button>
                 </div>
             </div>
-        </Fragment>
+        
     )
 
 }

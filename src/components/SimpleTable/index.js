@@ -29,11 +29,11 @@ export default function SimpleTable({people, saveToFavorites, showDetails}){
                 <tbody>
                     {people.map((person) =>{
                         return(<tr>
-                            <th scope="row">{person.name}</th>
-                            <td>{person.gender}</td>
-                            <td>{person.birth_year}</td>
-                            <td>{person.eye_color}</td>
-                            <td>
+                            <th scope="row" className="tableCenter">{person.name}</th>
+                            <td className="tableCenter">{person.gender}</td>
+                            <td className="tableCenter">{person.birth_year}</td>
+                            <td className="tableCenter">{person.eye_color}</td>
+                            <td className="tableCenter">
                                 <div>
                                     <Button value={person.name} onClick={handleShowDetails}>show details</Button>
                                     <Button value={person.name} onClick={handleSaveToFav}>save</Button>
