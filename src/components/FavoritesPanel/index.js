@@ -12,10 +12,6 @@ function FavoritesPanel({favorites, removeFromFavorites, showDetails}){
         showDetails(name)
     }
 
-    useEffect(()=>{
-        console.log("INSIDE USEEFFECT FAVORITES PANEL")
-        console.log(favorites)
-    })
     return (
 
         <Fragment>

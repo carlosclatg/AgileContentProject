@@ -14,9 +14,6 @@ function SimpleCard({person, remove, show}){
     const handleShow = (event) => {
         show(event.target.value)
     }
-
-    
-
     return (
         <div className="personCard" >
             <img className="personCard__image" src={getRandomImage(person.url)} width= "175px" height="175px"/>

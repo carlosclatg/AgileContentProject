@@ -93,10 +93,10 @@ function Home(){
                 <Container height="40" >
                   <div> 
                     <p className="savedPeople">Saved People</p>
-                    <div id="myBtnContainer">
-                        <Button onClick={filterSelection}>All</Button>
-                        <Button value ="male" onClick={filterSelection}>Male</Button>
-                        <Button value ="female" onClick={filterSelection}>Female</Button>
+                    <div className="myBtnContainer">
+                        <Button color={!genderFilter ? "primary" : "primaryUnselected"} onClick={filterSelection}>All</Button>
+                        <Button color={genderFilter == sex[1] ? "primary" : "primaryUnselected"} value="male" onClick={filterSelection}>Male</Button>
+                        <Button color={genderFilter == sex[2] ? "primary" : "primaryUnselected"} value="female" onClick={filterSelection}>Female</Button>
                     </div>
                   </div>
                   <div className="favoritesContainer">
