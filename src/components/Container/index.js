@@ -16,7 +16,6 @@ export default styled.div`
     align-content: ${props => props.simple ? "flex-start" : null};
     margin-bottom: 20px;
     padding: 5px
-
 `;
 
 

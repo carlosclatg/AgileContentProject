@@ -1,7 +1,7 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React from 'react';
 import utils from '../../utils';
 import Button from '../Button';
-import './index.sass'
+import './index.sass';
 
 function SimpleCard({person, remove, show}){
 

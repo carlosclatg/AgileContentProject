@@ -23,7 +23,6 @@ const SWApi = {
             response.json()
                 .then(data => { 
                     arrayPeople = arrayPeople.concat(data.results);
-                    console.log(arrayPeople)
                     if(data.next) {
                         this.getPeople(null, arrayPeople, data.next, resolve, reject)
                     } else {

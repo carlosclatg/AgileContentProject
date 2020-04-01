@@ -1,7 +1,7 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React from 'react';
+import Button from '../Button';
 import ScrollableContainer from '../ScrollableContainer';
-import Button from '../Button'
-import './index.sass'
+import './index.sass';
 
 export default function SimpleTable({people, saveToFavorites, showDetails}){
 

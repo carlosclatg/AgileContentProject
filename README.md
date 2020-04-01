@@ -1,6 +1,24 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# StarWars Character APP
 
-## Available Scripts
+In this application you can search for your favorites characters of Star Wars Saga.
+
+A user may:
+
+* Search for characters
+* Save a character into favorites panel
+* View details of a selected character
+
+## Technologies
+
+React Hooks, JavaScript, HTML, SASS, Styled-Components
+
+
+## Architecture
+
+StyledComponents --List<Components> -- App -- Logic Layer -- Api Layer <---> External Api
+
+
+## How to run the project ?
 
 In the project directory, you can run:
 

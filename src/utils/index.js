@@ -30,9 +30,7 @@ const utils = {
 
         const arraySimplified = []
         arrayData.forEach(elem => {
-            console.log(elem)
             if(!arrayFavorites.some(fav => fav.name == elem.name)){
-                console.log("pushing" + elem)
                 arraySimplified.push(elem)
             }
         })
@@ -46,8 +44,6 @@ const utils = {
     },
 
     getRandomInt(number) {
-        console.log("this is a number" + number)
-        console.log("before taking the rest" + number%(this.images.length-1))
         return number%(this.images.length-1)
     },
     

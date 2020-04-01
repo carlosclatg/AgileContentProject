@@ -1,4 +1,4 @@
-import React ,{ Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import SimpleCard from "../SimpleCard";
 
 
@@ -13,9 +13,7 @@ function FavoritesPanel({favorites, removeFromFavorites, showDetails}){
     }
 
     return (
-
         <Fragment>
-            
             {favorites.length ?
                 favorites
                     .map((person) => {
@@ -25,10 +23,7 @@ function FavoritesPanel({favorites, removeFromFavorites, showDetails}){
                 <p> No results to display ...</p>           
             }
         </Fragment>
-
     )
-
-
 }
 
 

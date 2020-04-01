@@ -2,12 +2,12 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { withRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import utils from '../../utils';
+import Button from '../Button';
+import CardDetails from '../CardDetails';
 import Container from '../Container';
 import FavoritesPanel from '../FavoritesPanel';
 import SearchComponent from '../SearchComponent';
 import SimpleTable from '../SimpleTable';
-import CardDetails from '../CardDetails'
-import Button from '../Button'
 import './index.sass';
 
 
@@ -70,10 +70,7 @@ function Home(){
   }
 
   const filterSelection = (event) => { 
-    console.log(event.target.value)
     setGenderFilter(event.target.value)
-
-    console.log(favorites.filter(f => !genderFilter ? true : f.gender == genderFilter))
   }
 
   

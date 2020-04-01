@@ -1,6 +1,6 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import utils from '../../utils'
-import './index.sass'
+import React from 'react';
+import utils from '../../utils';
+import './index.sass';
 
 function CardDetails({person, remove}){
 

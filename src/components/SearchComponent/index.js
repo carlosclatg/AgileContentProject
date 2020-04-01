@@ -1,6 +1,6 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import logic from '../../logic'
-import './index.sass'
+import React, { useState } from 'react';
+import logic from '../../logic';
+import './index.sass';
 
 export default function SearchComponent({setDataToDisplay, resetValues}){
 

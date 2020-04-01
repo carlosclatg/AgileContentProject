@@ -17,6 +17,7 @@ const logic = {
         .catch("error retrieving data")
 
 
+        //For test purposes
         // return new Promise((resolve, reject) => {
         //     resolve([
         //         {
