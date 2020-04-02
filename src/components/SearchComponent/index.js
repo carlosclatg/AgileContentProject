@@ -14,7 +14,7 @@ export default function SearchComponent({setDataToDisplay, resetValues}){
             setError(false) 
             logic.getPeople(criteria)
                 .then(result => {
-                    setDataToDisplay(result)
+                    setDataToDisplay(result, criteria)
                     setLoading(false)  
                 }, () => {
                     setLoading(false)

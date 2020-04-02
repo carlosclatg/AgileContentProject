@@ -13,27 +13,34 @@ import './index.sass';
 
 function Home(){
 
-  let data = []
-  const sex = [null, 'male', 'female']
-  const [dataSimplified, setDataSimplified] = useState([])
+  const [data, setData] = useState([])
+  const sex = [null, 'male', 'female'];
+  const [criteria, setCriteria] = useState();
+  const [dataSimplified, setDataSimplified] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [characterToDisplay, setcharacterToDisplay] = useState(null);
   const [genderFilter, setGenderFilter] = useState(sex[0]);
 
-  const displayResults = (dataRetrieved) => {
+  const displayResults = (dataRetrieved, criteria) => {
       if(dataRetrieved.length){
-          data = dataRetrieved
-          let arraySimplified = utils.retrieveFavoritesFromData(favorites, dataRetrieved)
-          setDataSimplified(arraySimplified)
+        setData(dataRetrieved)
+        let arraySimplified = utils.retrieveFavoritesFromData(favorites, dataRetrieved)
+        setDataSimplified(arraySimplified)
       } else {
           data = []
       }
+      setCriteria(criteria)
   }
 
-
   useEffect(()=>{
-    if(favorites.length){
-        setDataSimplified(dataSimplified.filter(item => item.name !== favorites[favorites.length - 1]))
+    let dataSimplified2 = []
+    dataSimplified2 = data.filter(item => {
+      return item.name.toLowerCase().includes(criteria.toLowerCase())
+    });
+    if(favorites.length){ //case some favs
+      setDataSimplified(dataSimplified2.filter(item => !favorites.includes(item)))
+    } else{ //case no favs
+      setDataSimplified(dataSimplified2)
     }
   }, [favorites])
 
@@ -52,7 +59,6 @@ function Home(){
         character = favorites.find(elem => elem.name == nameToShow)
         setcharacterToDisplay(character)
     }
-    
   }
 
   const resetValues = () => {

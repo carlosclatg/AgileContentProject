@@ -1,7 +1,3 @@
-import { array } from "prop-types"
-
-
-
 const utils = {
 
 
@@ -30,7 +26,7 @@ const utils = {
 
         const arraySimplified = []
         arrayData.forEach(elem => {
-            if(!arrayFavorites.some(fav => fav.name == elem.name)){
+            if(!arrayFavorites.some(fav => fav.name === elem.name)){
                 arraySimplified.push(elem)
             }
         })
