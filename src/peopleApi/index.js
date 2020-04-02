@@ -7,9 +7,8 @@ const SWApi = {
         let urlFetch;
         if(nextPage == 0) {
             arrayPeople = new Array();
-        }
-        if(nextPage == 0) urlFetch = `${this.url}people/?search=${searchCriteria}`;
-        else urlFetch = nextPage;
+            urlFetch = `${this.url}people/?search=${searchCriteria}`;
+        } else urlFetch = nextPage;
         return fetch(urlFetch, {
             method: 'GET',
             headers: {
