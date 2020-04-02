@@ -8,7 +8,7 @@ A user may:
 * Save a character into favorites panel
 * View details of a selected character
 
-![alt text]('/src/static-sources/screenshot1.png')
+![alt text](/src/static-sources/screenshot1.png)
 
 ## Technologies
 
