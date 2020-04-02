@@ -19,7 +19,11 @@ export default function SearchComponent({setDataToDisplay, resetValues}){
                 }, () => {
                     setLoading(false)
                     setError(true) 
-                }) ;
+                })
+                .catch(()=>{
+                    setLoading(false)
+                    setError(true)
+                })
             resetValues()
         }
     }

@@ -14,7 +14,7 @@ const logic = {
         .then(response => {
             return response;
         })
-        .catch("error retrieving data")
+        .catch(reject('timeout'))
 
 
         //For test purposes
