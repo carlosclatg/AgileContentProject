@@ -27,7 +27,7 @@ function Home(){
         let arraySimplified = utils.retrieveFavoritesFromData(favorites, dataRetrieved)
         setDataSimplified(arraySimplified)
       } else {
-          data = []
+          setData([])
       }
       setCriteria(criteria)
   }
@@ -89,7 +89,8 @@ function Home(){
         <Fragment>
             <ThemeProvider theme={theme}>
             <div className="firstColumn">
-                <Container height="57">
+                <div className="headerFirstColumn">Web Test <p>Play With SWAPI</p></div>
+                <Container height="47">
                     <SearchComponent setDataToDisplay={displayResults} resetValues = {resetValues}/>
                     <SimpleTable people = {dataSimplified} saveToFavorites = {saveToFavorites} showDetails = {showDetails}/>
                 </Container>

@@ -38,7 +38,6 @@ export default function SearchComponent({setDataToDisplay, resetValues}){
                     <input className="input" type="text" placeholder="Find your characters" required value={criteria} onChange={handleCriteria}/>
                 </div>
                 <div className="buttonContainer">
-
                         {!loading ?  
                         <button className="button is-info" type="submit">Search</button> 
                         : 
