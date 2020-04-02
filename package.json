@@ -7,6 +7,9 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bulma": "^0.8.1",
+    "mocha": "^6.0.2",
+    "nyc": "^15.0.0",
+    "expect.js": "^0.3.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -19,8 +22,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "nyc mocha .././index.test.js",
+    "eject": "react-scripts eject",
+    "test-coverage": "nyc --reporter=html --reporter=text mocha --timeout 10000 **/*.spec.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nyc": "^15.0.0"
   }
 }

@@ -1,11 +1,13 @@
-import SWApi from '../peopleApi'
-import { reject } from 'q'
+'use strict'
 
+// import SWApi from '../peopleApi'
 
-const logic = {
+var SWApi = require ('../peopleApi/index.js')
+
+module.exports = logic = {
 
     getPeople(searchCriteria){
-        if (typeof searchCriteria !== 'string') throw TypeError(searchCriteria + ' is not a string')
+        if (typeof searchCriteria !== 'string') throw Error (searchCriteria + ' is not a string')
         if (!searchCriteria.trim().length) throw Error('searchCriteria cannot be empty')
 
         return new Promise((resolve, reject) => {
@@ -146,5 +148,3 @@ const logic = {
     
 }
 
-
-export default logic
