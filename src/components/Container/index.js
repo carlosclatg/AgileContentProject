@@ -8,7 +8,7 @@ const handleHeigth = height => {
 export default styled.div`
     height: ${({ height }) => height ? handleHeigth(height) : null};
     width: 100%;
-    background-color: #d5e0f0;
+    background-color: #ebf5f3;
     display: ${props => props.simple ? "flex" : null};
     flex-direction: ${props => props.simple ? "column" : null};
     justify-content: ${props => props.simple ? "flex-start" : null};

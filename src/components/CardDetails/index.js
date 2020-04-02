@@ -15,7 +15,7 @@ function CardDetails({person, remove}){
                 <div className="bookCard__content">
                     <div className="bookCard__title"><p>Information about...</p></div>
                     <img src={getRandomImage(person.url)}  />
-                    <div className="bookCard__feature bookCard__feature-big"><p className="bookCard__featureName bookCard__featureName-big"></p><p>{person.name}</p></div>
+                    <div className="bookCard__feature bookCard__feature-big"><p>{person.name}</p></div>
                     <div className="bookCard__feature"><p className="bookCard__featureName">height :</p><p>{person.height}</p></div>
                     <div className="bookCard__feature"><p className="bookCard__featureName">mass: </p><p>{person.mass}</p></div>
                     <div className="bookCard__feature"><p className="bookCard__featureName">hair_color: </p><p>{person.hair_color}</p></div>

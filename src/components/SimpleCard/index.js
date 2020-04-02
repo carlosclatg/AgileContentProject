@@ -20,7 +20,7 @@ function SimpleCard({person, remove, show}){
             <p>{person.name}</p>
             <div className="personCard__buttonDiv">
                 <Button color="primary" value={person.name} onClick={handleRemove} fit="50">Remove</Button>
-                <Button color="danger" value={person.name} onClick={handleShow} fit="50">Show Details</Button>
+                <Button color="primary" value={person.name} onClick={handleShow} fit="50">Show Details</Button>
             </div>
         </div>
     )

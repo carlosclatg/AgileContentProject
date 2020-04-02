@@ -2,7 +2,7 @@
     
 @mixin commonBorder
     border-width: 1px 2px 1px 2px
-    border-color: grey
+    border-color: rgba(105, 129, 133, 0.5)
     border-style: solid
 
 
@@ -35,11 +35,13 @@
         @include commonBorder
         &-big
             height: 15%
+            p
+                font-size: $fontSizeTitles * 1.1
         
     &__featureName
         font-weight: bold
         &-big
-            font-size: $fontSizeTitles
+           
 
     &__title
         font-size: bold

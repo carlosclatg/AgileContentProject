@@ -15,8 +15,15 @@ React Hooks, JavaScript, HTML, SASS, Styled-Components
 
 ## Architecture
 
-StyledComponents --List<Components> -- App -- Logic Layer -- Api Layer <---> External Api
+StyledComponents --ListOfComponents -- App -- Logic Layer -- Api Layer <---> External Api
 
+## Improvements
+
+A user may:
+
+* Migrate to Redux
+* Paginate table
+* Paginate table
 
 ## How to run the project ?
 

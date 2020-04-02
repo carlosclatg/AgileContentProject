@@ -5,12 +5,12 @@ import './App.sass'
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-          <Route exact path="/" render={() => <Redirect to="/home" /> }/>
-          <Route path="/home" component={ Home }/>
-      </Router>
-    </div> 
+    <Router>
+      <div className="App">
+            <Route exact path="/" render={() => <Redirect to="/home" /> }/>
+            <Route path="/home" component={ Home }/>      
+      </div> 
+    </Router>
   );
 }
-export default withRouter(App);
+export default App;
