@@ -10,11 +10,12 @@
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "redux": "4.0.0",
     "star-wars-api": "^1.0.1",
-    "styled-components": "^5.0.1",
-    "swapi-node": "^0.5.0"
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

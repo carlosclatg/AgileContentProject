@@ -13,12 +13,15 @@ import './index.sass';
 
 function Home(){
 
+
   let data = []
   const sex = [null, 'male', 'female']
   const [dataSimplified, setDataSimplified] = useState([])
   const [favorites, setFavorites] = useState([]);
   const [characterToDisplay, setcharacterToDisplay] = useState(null);
-  const [genderFilter, setGenderFilter] = useState(sex[0]);
+  //const [genderFilter, setGenderFilter] = useState(sex[0]);
+
+
 
   const displayResults = (dataRetrieved) => {
       if(dataRetrieved.length){
@@ -71,6 +74,7 @@ function Home(){
 
   const filterSelection = (event) => { 
     setGenderFilter(event.target.value)
+    //setGenderFilter(event.target.value)
   }
 
   
@@ -80,6 +84,7 @@ function Home(){
   }
 
     return (
+      
         <Fragment>
             <ThemeProvider theme={theme}>
             <div className="firstColumn">
@@ -121,4 +126,4 @@ function Home(){
 
 }
 
-export default withRouter(Home);
+export default Home;

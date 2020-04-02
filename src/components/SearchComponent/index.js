@@ -8,7 +8,9 @@ export default function SearchComponent({setDataToDisplay, resetValues}){
     const [loading, setLoading] = useState();
     const [error, setError] = useState(false);
 
-    const handleFormSubmit = () => {
+    const handleFormSubmit = (event) => {
+        event.preventDefault()
+        console.log(criteria)
         if(criteria.length > 0){
             setLoading(true)
             setError(false) 
