@@ -21,10 +21,9 @@ StyledComponents --ListOfComponents -- App -- Logic Layer -- Api Layer <---> Ext
 
 ## Improvements
 
-A user may:
+In the future...:
 
 * Migrate to Redux
-* Paginate table
 * Paginate table
 
 ## How to run the project ?
